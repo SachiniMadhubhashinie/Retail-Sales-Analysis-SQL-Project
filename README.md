@@ -25,7 +25,7 @@ A simple SQL project analyzing retail sales data. Includes database setup, data 
   CREATE DATABASE RetailSales;
 USE RetailSales;
 
-' ' ' sql
+`` ` `` sql
 DROP TABLE IF EXISTS Sales_Retail;
 CREATE TABLE Sales_Retail
 (
@@ -40,7 +40,7 @@ quantiy INT,
 price_per_unit FLOAT,
 cogs FLOAT,
 total_sale FLOAT
-' ' '
+`` ` ``
 
 
 
