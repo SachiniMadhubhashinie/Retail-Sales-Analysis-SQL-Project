@@ -29,6 +29,22 @@ GROUP BY customer_id
 ORDER BY total_sales DESC;
 '''
 
+SELECT 
+    CASE 
+        WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
+        WHEN DATEPART(HOUR, sale_time) BETWEEN 12 AND 16 THEN 'Afternoon'
+        ELSE 'Evening'
+    END AS Shift,
+    COUNT(*) AS Total_Orders
+FROM Sales_Retail
+GROUP BY CASE 
+             WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
+             WHEN DATEPART(HOUR, sale_time) BETWEEN 12 AND 16 THEN 'Afternoon'
+             ELSE 'Evening'
+         END
+ORDER BY Total_Orders DESC;
+
+
 
 
 
