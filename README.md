@@ -49,11 +49,11 @@ total_sale FLOAT
 - **Category Count**: Identify all unique product categories in the dataset.
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
-  ```sql
+```sql
 SELECT*FROM Sales_Retail
 SELECT COUNT(*) FROM Sales_Retail
 SELECT DISTINCT category FROM Sales_Retail
---Data Cleaning
+
 SELECT *FROM Sales_Retail
 WHERE transactions_id is NULL
 
