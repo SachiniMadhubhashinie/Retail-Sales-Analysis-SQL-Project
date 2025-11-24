@@ -20,6 +20,15 @@ A simple SQL project analyzing retail sales data. Includes database setup, data 
     <li>Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category,         quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.</li>
   </ul>
 </ol>
+```sql
+SELECT 
+    customer_id,
+    SUM(total_sale) AS total_sales
+FROM Sales_Retail
+GROUP BY customer_id
+ORDER BY total_sales DESC;
+```
+
 
 
 
