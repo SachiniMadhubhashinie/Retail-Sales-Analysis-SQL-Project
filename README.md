@@ -12,40 +12,35 @@ A simple SQL project analyzing retail sales data. Includes database setup, data 
   <li><i>Business Analysis:</i>Business Analysis:</li>
 </ol>
 
-<h2>Project Structure</h2>
-<ol>
-<li><h3>Database Setup</h3><li></li>
-  <ul>
-    <li>Database Creation: The project starts by creating a database named RetailSales</li>
-    <li>Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category,         quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.</li>
-  </ul>
-</ol>
-'''sql
-SELECT 
-    customer_id,
-    SUM(total_sale) AS total_sales
-FROM Sales_Retail
-GROUP BY customer_id
-ORDER BY total_sales DESC;
-'''
 
-SELECT 
-    CASE 
-        WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
-        WHEN DATEPART(HOUR, sale_time) BETWEEN 12 AND 16 THEN 'Afternoon'
-        ELSE 'Evening'
-    END AS Shift,
-    COUNT(*) AS Total_Orders
-FROM Sales_Retail
-GROUP BY CASE 
-             WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
-             WHEN DATEPART(HOUR, sale_time) BETWEEN 12 AND 16 THEN 'Afternoon'
-             ELSE 'Evening'
-         END
-ORDER BY Total_Orders DESC;
+  <h2>Project Structure</h2>
+  <ol>
+    <li>
+      <strong>Database Setup</strong>
+      <p><strong>Database Creation:</strong> The project starts by creating a database named <em>p1_retail_db</em>.</p>
+      <p><strong>Table Creation:</strong> A table named <em>retail_sales</em> is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID,        gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.</p>
+    </li>
+  </ol>
 
+  CREATE DATABASE RetailSales;
+USE RetailSales;
 
-
+--Create Table
+DROP TABLE IF EXISTS Sales_Retail;
+CREATE TABLE Sales_Retail
+(
+transactions_id INT PRIMARY KEY,
+sale_date DATE,
+sale_time TIME,
+customer_id INT,
+gender VARCHAR(10),
+age INT,
+category VARCHAR(15),
+quantiy INT,
+price_per_unit FLOAT,
+cogs FLOAT,
+total_sale FLOAT
+);
 
 
 
