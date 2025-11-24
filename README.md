@@ -12,5 +12,32 @@ A simple SQL project analyzing retail sales data. Includes database setup, data 
   <li><i>Business Analysis:</i>Business Analysis:</li>
 </ol>
 
+<h2>Project Structure</h2>
+<ol>
+<li><h3>Database Setup</h3><li></li>
+  <ul>
+    <li>Database Creation: The project starts by creating a database named RetailSales</li>
+    <li>Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category,         quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.</li>
+  </ul>
+</ol>
+
+...sql
+CREATE DATABASE RetailSales
+CREATE TABLE Sales_Retail
+(
+transactions_id INT PRIMARY KEY ,
+sale_date DATE,
+sale_time TIME,
+customer_id INT,
+gender VARCHAR(10),
+age INT,
+category VARCHAR(15),
+quantiy INT ,
+price_per_unit FLOAT,
+cogs FLOAT,
+total_sale FLOAT
+)
+...
+
 
 
