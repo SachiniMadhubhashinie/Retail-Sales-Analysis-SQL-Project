@@ -25,22 +25,24 @@ A simple SQL project analyzing retail sales data. Includes database setup, data 
   CREATE DATABASE RetailSales;
 USE RetailSales;
 
-`` ` `` sql
-DROP TABLE IF EXISTS Sales_Retail;
+```sql
+CREATE DATABASE RetailSales
+
 CREATE TABLE Sales_Retail
 (
-transactions_id INT PRIMARY KEY,
+transactions_id INT PRIMARY KEY ,
 sale_date DATE,
 sale_time TIME,
 customer_id INT,
 gender VARCHAR(10),
 age INT,
 category VARCHAR(15),
-quantiy INT,
+quantiy INT ,
 price_per_unit FLOAT,
 cogs FLOAT,
 total_sale FLOAT
-`` ` ``
+)
+```
 
 
 
